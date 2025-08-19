@@ -18,7 +18,7 @@ func TestNextToken(t *testing.T) {
 	2 < 10 > 7;
 
 	if (5 < 10) {
-		return true;
+		return sant;
 	} else {
 		return false;
 	}
@@ -103,7 +103,7 @@ func TestNextToken(t *testing.T) {
 		{token.RPAREN, ")"},
 		{token.LBRACE, "{"},
 		{token.RETURN, "return"},
-		{token.TRUE, "true"},
+		{token.TRUE, "sant"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
 		{token.ELSE, "else"},

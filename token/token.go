@@ -63,8 +63,8 @@ const (
 	FUNCTION = "FUNCTION"
 	// LET is a token type for lets.
 	LET = "LET"
-	// SANN is a token type for true.
-	SANN = "SANN"
+	// TRUE is a token type for true.
+	TRUE = "sant"
 	// FALSE is a token type for false.
 	FALSE = "FALSE"
 	// IF is a token type for if.
@@ -87,7 +87,7 @@ type Token struct {
 var keywords = map[string]Type{
 	"fn":     FUNCTION,
 	"let":    LET,
-	"sann":   SANN,
+	"sant":   TRUE,
 	"false":  FALSE,
 	"if":     IF,
 	"else":   ELSE,

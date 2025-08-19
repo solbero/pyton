@@ -121,7 +121,11 @@ func (b *Boolean) Type() Type {
 
 // Inspect returns a string representation of the Boolean.
 func (b *Boolean) Inspect() string {
-	return strconv.FormatBool(b.Value)
+	if b.Value == true {
+		return "sant"
+	} else {
+		return "false"
+	}
 }
 
 // HashKey returns a hash key object for b.

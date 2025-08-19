@@ -15,7 +15,7 @@ func TestLetStatements(t *testing.T) {
 		expectedValue interface{}
 	}{
 		{"let x = 5;", "x", 5},
-		{"let y = true;", "y", true},
+		{"let y = sant;", "y", true},
 		{"let foobar = y;", "foobar", "y"},
 	}
 
@@ -102,7 +102,7 @@ func TestReturnStatement(t *testing.T) {
 		expectedValue interface{}
 	}{
 		{"return 5;", 5},
-		{"return true;", true},
+		{"return sant;", "sant"},
 		{"return x;", "x"},
 	}
 
@@ -224,7 +224,7 @@ func TestParsingPrefixExpressions(t *testing.T) {
 	}{
 		{"!5;", "!", 5},
 		{"-15;", "-", 15},
-		{"!true", "!", true},
+		{"!sant", "!", true},
 		{"!false", "!", false},
 	}
 
@@ -334,8 +334,8 @@ func TestParsingInfixExpressions(t *testing.T) {
 		{"5 < 5;", 5, "<", 5},
 		{"5 == 5;", 5, "==", 5},
 		{"5 != 5;", 5, "!=", 5},
-		{"true == true", true, "==", true},
-		{"true != false", true, "!=", false},
+		{"sant == sant", true, "==", true},
+		{"sant != false", true, "!=", false},
 		{"false == false", false, "==", false},
 		{"5 + 5.1;", 5, "+", 5.1},
 		{"5.0 - 5.2;", 5.0, "-", 5.2},
@@ -398,15 +398,15 @@ func TestOperatorPrecedenceParsing(t *testing.T) {
 		{"5 > 4 == 3 < 4", "((5 > 4) == (3 < 4))"},
 		{"5 < 4 != 3 > 4", "((5 < 4) != (3 > 4))"},
 		{"3 + 4 * 5 == 3 * 1 + 4 * 5", "((3 + (4 * 5)) == ((3 * 1) + (4 * 5)))"},
-		{"true", "true"},
+		{"sant", "sant"},
 		{"false", "false"},
 		{"3 > 5 == false", "((3 > 5) == false)"},
-		{"3 < 5 == true", "((3 < 5) == true)"},
+		{"3 < 5 == sant", "((3 < 5) == sant)"},
 		{"1 + (2 + 3) + 4", "((1 + (2 + 3)) + 4)"},
 		{"(5 + 5) * 2", "((5 + 5) * 2)"},
 		{"2 / (5 + 5)", "(2 / (5 + 5))"},
 		{"-(5 + 5)", "(-(5 + 5))"},
-		{"!(true == true)", "(!(true == true))"},
+		{"!(sant == sant)", "(!(sant == sant))"},
 		{"a + add(b * c) + d", "((a + add((b * c))) + d)"},
 		{
 			"add(a, b, 1, 2 * 3, 4 + 5, add(6, 7 * 8))",
@@ -438,9 +438,6 @@ func testBooleanLiteral(t *testing.T, expr ast.Expression, value bool) {
 	if b.Value != value {
 		t.Errorf("b.Value not %t. got=%t", value, b.Value)
 	}
-	if b.TokenLiteral() != fmt.Sprintf("%t", value) {
-		t.Errorf("b.TokenLiteral() not %t. got=%s", value, b.TokenLiteral())
-	}
 }
 
 func TestBooleanExpression(t *testing.T) {
@@ -448,7 +445,7 @@ func TestBooleanExpression(t *testing.T) {
 		input    string
 		expected bool
 	}{
-		{"true", true},
+		{"sant", true},
 		{"false", false},
 	}
 
@@ -776,7 +773,7 @@ func TestParsingHashLiterals(t *testing.T) {
 			},
 		},
 		{
-			input: "{true: 1, false: 2}",
+			input: "{sant: 1, false: 2}",
 			expected: map[bool]int64{
 				true:  1,
 				false: 2,

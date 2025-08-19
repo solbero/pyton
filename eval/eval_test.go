@@ -108,7 +108,7 @@ func TestEvalBooleanExpression(t *testing.T) {
 		input    string
 		expected bool
 	}{
-		{"true", true},
+		{"sant", true},
 		{"false", false},
 		{"1 < 2", true},
 		{"1 > 2", false},
@@ -118,14 +118,14 @@ func TestEvalBooleanExpression(t *testing.T) {
 		{"1 != 1", false},
 		{"1 == 2", false},
 		{"1 != 2", true},
-		{"true == true", true},
+		{"sant == sant", true},
 		{"false == false", true},
-		{"true == false", false},
-		{"true != false", true},
-		{"false != true", true},
-		{"(1 < 2) == true", true},
+		{"sant == false", false},
+		{"sant != false", true},
+		{"false != sant", true},
+		{"(1 < 2) == sant", true},
 		{"(1 < 2) == false", false},
-		{"(1 > 2) == true", false},
+		{"(1 > 2) == sant", false},
 		{"(1 > 2) == false", true},
 		{`"hello" == "hello"`, true},
 		{`"hello" == "world"`, false},
@@ -144,10 +144,10 @@ func TestBangOperator(t *testing.T) {
 		input    string
 		expected bool
 	}{
-		{"!true", false},
+		{"!sant", false},
 		{"!false", true},
 		{"!5", false},
-		{"!!true", true},
+		{"!!sant", true},
 		{"!!false", false},
 		{"!!5", true},
 	}
@@ -163,7 +163,7 @@ func TestIfExpression(t *testing.T) {
 		input    string
 		expected interface{}
 	}{
-		{"if (true) { 10 }", 10},
+		{"if (sant) { 10 }", 10},
 		{"if (false) { 10 }", nil},
 		{"if (1) { 10 }", 10},
 		{"if (1 < 2) { 10 }", 10},
@@ -219,16 +219,16 @@ func TestErrorHandling(t *testing.T) {
 		input           string
 		expectedMessage string
 	}{
-		{"5 + true;", "type mismatch: Integer + Boolean"},
-		{"5 + true; 5;", "type mismatch: Integer + Boolean"},
-		{"-true", "unknown operator: -Boolean"},
-		{"true + false", "unknown operator: Boolean + Boolean"},
-		{"5; true + false; 5", "unknown operator: Boolean + Boolean"},
-		{"if (10 > 1) { true + false; }", "unknown operator: Boolean + Boolean"},
+		{"5 + sant;", "type mismatch: Integer + Boolean"},
+		{"5 + sant; 5;", "type mismatch: Integer + Boolean"},
+		{"-sant", "unknown operator: -Boolean"},
+		{"sant + false", "unknown operator: Boolean + Boolean"},
+		{"5; sant + false; 5", "unknown operator: Boolean + Boolean"},
+		{"if (10 > 1) { sant + false; }", "unknown operator: Boolean + Boolean"},
 		{`
 		if (10 > 1) {
 			if (10 > 1) {
-				return true + false;
+				return sant + false;
 			}
 
 			return 1;
@@ -366,7 +366,7 @@ func TestBuiltinFunctions(t *testing.T) {
 		// len for arrays
 		{"len([])", 0},
 		{"len([1])", 1},
-		{"len([1, 1 + 2 * 3, true])", 3},
+		{"len([1, 1 + 2 * 3, sant])", 3},
 		// first for arrays
 		{"first([])", nil},
 		{"first([1])", 1},
@@ -481,7 +481,7 @@ func TestHashLiterals(t *testing.T) {
 		two: 1 + 1,
 		"thr" + "ee": 6 / 2,
 		4: 4,
-		true: 5,
+		sant: 5,
 		false: 6
 	};
 	`
@@ -525,7 +525,7 @@ func TestHashIndexExpressions(t *testing.T) {
 		{`let key = "foo"; {"foo": 5}[key]`, 5},
 		{`{}["foo"]`, nil},
 		{`{5: 5}[5]`, 5},
-		{`{true: 5}[true]`, 5},
+		{`{sant: 5}[sant]`, 5},
 		{`{false: 5}[false]`, 5},
 	}
 

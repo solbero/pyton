@@ -36,11 +36,11 @@ func TestQuoteUnquote(t *testing.T) {
 			`8`,
 		},
 		{
-			`quote(unquote(true))`,
+			`quote(unquote(sant))`,
 			`true`,
 		},
 		{
-			`quote(unquote(true == false))`,
+			`quote(unquote(sant == false))`,
 			`false`,
 		},
 		{
