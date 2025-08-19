@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/skatsuta/monkey-interpreter/eval"
-	"github.com/skatsuta/monkey-interpreter/lexer"
-	"github.com/skatsuta/monkey-interpreter/object"
-	"github.com/skatsuta/monkey-interpreter/parser"
+	"github.com/solbero/pyton/eval"
+	"github.com/solbero/pyton/lexer"
+	"github.com/solbero/pyton/object"
+	"github.com/solbero/pyton/parser"
 )
 
 const prompt = ">> "

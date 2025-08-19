@@ -4,9 +4,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/skatsuta/monkey-interpreter/lexer"
-	"github.com/skatsuta/monkey-interpreter/object"
-	"github.com/skatsuta/monkey-interpreter/parser"
+	"github.com/solbero/pyton/lexer"
+	"github.com/solbero/pyton/object"
+	"github.com/solbero/pyton/parser"
 )
 
 func testEval(t *testing.T, input string) object.Object {

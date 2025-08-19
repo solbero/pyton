@@ -3,7 +3,7 @@ package eval
 import (
 	"testing"
 
-	"github.com/skatsuta/monkey-interpreter/object"
+	"github.com/solbero/pyton/object"
 )
 
 func TestQuoteUnquote(t *testing.T) {

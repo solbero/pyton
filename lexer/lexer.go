@@ -1,6 +1,6 @@
 package lexer
 
-import "github.com/skatsuta/monkey-interpreter/token"
+import "github.com/solbero/pyton/token"
 
 // Lexer represents a lexer for Monkey programming language.
 type Lexer interface {

@@ -7,11 +7,11 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/skatsuta/monkey-interpreter/eval"
-	"github.com/skatsuta/monkey-interpreter/lexer"
-	"github.com/skatsuta/monkey-interpreter/object"
-	"github.com/skatsuta/monkey-interpreter/parser"
-	"github.com/skatsuta/monkey-interpreter/repl"
+	"github.com/solbero/pyton/eval"
+	"github.com/solbero/pyton/lexer"
+	"github.com/solbero/pyton/object"
+	"github.com/solbero/pyton/parser"
+	"github.com/solbero/pyton/repl"
 )
 
 func main() {

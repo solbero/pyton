@@ -1,8 +1,8 @@
 # Monkey interpreter
 
 [![wercker status](https://app.wercker.com/status/20b05c4eb17fc957ff322da01bb157fc/s/master "wercker status")](https://app.wercker.com/project/byKey/20b05c4eb17fc957ff322da01bb157fc)
-[![Go Report Card](https://goreportcard.com/badge/github.com/skatsuta/monkey-interpreter)](https://goreportcard.com/report/github.com/skatsuta/monkey-interpreter)
-[![GoDoc](https://godoc.org/github.com/skatsuta/monkey-interpreter?status.svg)](https://godoc.org/github.com/skatsuta/monkey-interpreter)
+[![Go Report Card](https://goreportcard.com/badge/github.com/solbero/pyton)](https://goreportcard.com/report/github.com/solbero/pyton)
+[![GoDoc](https://godoc.org/github.com/solbero/pyton?status.svg)](https://godoc.org/github.com/solbero/pyton)
 
 
 Monkey programming language interpreter designed in [_Writing An Interpreter In Go_](https://interpreterbook.com/).
@@ -13,7 +13,7 @@ Monkey programming language interpreter designed in [_Writing An Interpreter In 
 Install the Monkey interpreter using `go get`:
 
 ```sh
-$ go get -v -u github.com/skatsuta/monkey-interpreter/...
+$ go get -v -u github.com/solbero/pyton/...
 ```
 
 Then run REPL:
@@ -22,7 +22,7 @@ Then run REPL:
 $ $GOPATH/bin/monkey-interpreter
 This is the Monkey programming language!
 Feel free to type in commands
->> 
+>>
 ```
 
 Or run a Monkey script file (for example `script.monkey` file):
@@ -48,7 +48,7 @@ You can define variables using `let` keyword. Supported number types are integer
 
 ### Arithmetic expressions
 
-You can do usual arithmetic operations against numbers, such as `+`, `-`, `*` and `/`. 
+You can do usual arithmetic operations against numbers, such as `+`, `-`, `*` and `/`.
 
 ```sh
 >> let a = 10;

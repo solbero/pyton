@@ -3,7 +3,7 @@ package eval
 import (
 	"fmt"
 
-	"github.com/skatsuta/monkey-interpreter/object"
+	"github.com/solbero/pyton/object"
 )
 
 var builtins = map[string]*object.Builtin{

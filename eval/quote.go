@@ -3,9 +3,9 @@ package eval
 import (
 	"strconv"
 
-	"github.com/skatsuta/monkey-interpreter/ast"
-	"github.com/skatsuta/monkey-interpreter/object"
-	"github.com/skatsuta/monkey-interpreter/token"
+	"github.com/solbero/pyton/ast"
+	"github.com/solbero/pyton/object"
+	"github.com/solbero/pyton/token"
 )
 
 const (
